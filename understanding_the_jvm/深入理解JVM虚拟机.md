@@ -54,7 +54,7 @@
 
    为类变量分配内存，并且设置该类变量的初始值，即零值，不包含用`final`修饰的`static`，因为`final`在编译的时候就会分配了，准备阶段会显示初始化，不会为实例变量分配初始化，类变量会分配在方法区中，实例变量会随着对象一起分配到Java堆中
 
-   ![image-20201014135510420](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201014135510420.png)
+   ![image-20201014135510420](https://github.com/DuHy/book-learn-note/blob/main/understanding_the_jvm/src/main/resource/img/image-20201014135510420.png)
 
 3. 解析
 
