@@ -87,11 +87,11 @@ Java虚拟机规范严格规定了，有且只有六种情况，必须立即对�
 
 类加载器可以分为如下几类：
 
-![image-20201014141024393](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201014141024393.png)
+![image-20201014141024393](https://github.com/DuHy/book-learn-note/blob/main/understanding_the_jvm/src/main/resource/img/image-20201014141024393.png?raw=true)
 
 引导类加载器和自定义加载器，概念上，将所有派生于抽象类`ClassLoader`的类加载器都划分为自定义加载器
 
-![image-20201014141226716](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201014141226716.png)
+![image-20201014141226716](https://github.com/DuHy/book-learn-note/blob/main/understanding_the_jvm/src/main/resource/img/image-20201014141226716.png?raw=true)
 
 代码样例，获取类加载器：
 
@@ -163,7 +163,7 @@ Java语言编写，由`sun.misc.Launcher$AppClassLoader`实现，派生于`Class
 
 Java虚拟机对Class文件采用的是按需加载，而且加载class文件时，Java虚拟机使用的是双亲委派模式，即把请求交由父类处理，它是异种任务委派模式
 
-![image-20201014143653893](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201014143653893.png)
+![image-20201014143653893](https://github.com/DuHy/book-learn-note/blob/main/understanding_the_jvm/src/main/resource/img/image-20201014143653893.png?raw=true)
 
 1、如果一个类加载器收到了类加载请求，它并不会自己先去加载。而是把这个请求委托给父类的加载器去执行
 
@@ -188,7 +188,7 @@ Java虚拟机对Class文件采用的是按需加载，而且加载class文件时
 
 JVM虚拟机整体结构
 
-![image-20201014145017623](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201014145017623.png)
+![image-20201014145017623](https://github.com/DuHy/book-learn-note/blob/main/understanding_the_jvm/src/main/resource/img/image-20201014145017623.png?raw=true)
 
 ### 程序计数器（PC寄存器）
 
@@ -252,13 +252,13 @@ Java方法有两种返回方式，一种是正常的函数返回，使用`return
 
 JVM虚拟机会为局部变量表中的每个Slot都分配一个访问索引，通过这个索引即可成功访问到局部变量表中指定的局部变量值
 
-![image-20201014150557653](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201014150557653.png)
+![image-20201014150557653](https://github.com/DuHy/book-learn-note/blob/main/understanding_the_jvm/src/main/resource/img/image-20201014150557653.png?raw=true)
 
 如果当前帧是由构造方法或者实例方法创建的，那么该对象引用`this`，会存放在index为0的slot处，其余的参数表顺序继续排列
 
 栈帧中的局部变量表中的槽位是可以重复的，如果一个局部变量过了其作用域，那么其作用域之后申明的新的局部变量就有可能会复用过期局部变量的槽位，从而达到节省资源的目的
 
-![image-20201014150625379](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201014150625379.png)
+![image-20201014150625379](https://github.com/DuHy/book-learn-note/blob/main/understanding_the_jvm/src/main/resource/img/image-20201014150625379.png?raw=true)
 
 ##### 操作数栈
 
@@ -368,7 +368,7 @@ Java中任何一个普通方法都具备虚函数的特征（运行期确认，�
 
 
 
-![image-20201014152842225](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201014152842225.png)
+![image-20201014152842225](https://github.com/DuHy/book-learn-note/blob/main/understanding_the_jvm/src/main/resource/img/image-20201014152842225.png?raw=true)
 
 静态语言和动态语言：区别在于对类型的检查是编译器还是运行期，满足编译期就是静态类型语言，反之就是动态类型语言。Java是静态类型语言，动态调用指令增加了动态语言的特性
 
