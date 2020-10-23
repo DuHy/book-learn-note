@@ -46,7 +46,7 @@ class CodeGenerator {
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("dhy");
         gc.setOpen(false);
-        gc.setSwagger2(true);
+//        gc.setSwagger2(true);
         gc.setFileOverride(false);
         gc.setIdType(IdType.AUTO);
         gc.setBaseResultMap(true);
@@ -103,7 +103,7 @@ class CodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.hxw.common.model.BaseModel");
+        strategy.setSuperEntityClass("com.hxw.common.model.BaseEntity");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         strategy.setLogicDeleteFieldName("deleted");

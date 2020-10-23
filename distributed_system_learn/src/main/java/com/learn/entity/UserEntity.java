@@ -1,18 +1,15 @@
 package com.learn.entity;
 
-import com.hxw.common.model.BaseModel;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author dhy
@@ -22,8 +19,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @TableName("user")
-@ApiModel(value="UserEntity对象", description="")
-public class UserEntity extends BaseModel {
+public class UserEntity extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
