@@ -1,4 +1,4 @@
-package com.learn.entity;
+package com.learn.common.entity;
 
 /**
  * @description: 实体父类

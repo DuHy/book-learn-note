@@ -60,7 +60,7 @@ class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/wbx?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC");
+        dsc.setUrl("jdbc:mysql://47.107.155.44:3306/wbx?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
@@ -70,7 +70,7 @@ class CodeGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         // pc.setModuleName("app");
-        pc.setParent("com.learn");
+        pc.setParent("com.learn.red_rob");
         pc.setController("control");
         pc.setEntity("entity");
         pc.setMapper("dao");
@@ -90,7 +90,7 @@ class CodeGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输入文件名称
-                return projectPath + "/src/main/resources/mapper/" + tableInfo.getEntityName().substring(0, tableInfo.getEntityName().length() - 6) + "Mapper"
+                return projectPath + "/src/main/resources/mapper/redrob/" + tableInfo.getEntityName().substring(0, tableInfo.getEntityName().length() - 6) + "Mapper"
                         + StringPool.DOT_XML;
             }
         });
@@ -103,13 +103,13 @@ class CodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.hxw.common.model.BaseEntity");
+        strategy.setSuperEntityClass("com.learn.common.entity.BaseEntity");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         strategy.setLogicDeleteFieldName("deleted");
 
         // strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/wbx?user=root&password=123456&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://47.107.155.44:3306/wbx?user=root&password=123456&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC");
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("show tables; ");
         List<String> tables = new ArrayList<String>();
@@ -121,7 +121,7 @@ class CodeGenerator {
         String[] strings = new String[tables.size()];
 
         tables.toArray(strings);
-        strategy.setInclude("user");
+        strategy.setInclude("red_rob_record");
         // strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
         // strategy.setTablePrefix(pc.getModuleName() + "_");
